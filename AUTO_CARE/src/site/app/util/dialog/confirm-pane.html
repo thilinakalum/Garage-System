@@ -1,0 +1,15 @@
+<div class="option-pane" ng-class="$ctrl.optionPaneClass">
+    <div class="option-pane-body">
+        <span class="glyphicon option-pane-icon" ng-class="$ctrl.optionPaneIcon"></span>
+        <div class="option-pane-title">
+            {{$ctrl.title}}
+        </div>
+        <div class="option-pane-message">
+            {{$ctrl.message}}
+        </div>
+    </div>
+    <div class="option-pane-footer">
+        <button id="btnConfirm" class="btn" ng-click="$ctrl.confirm()">CONFIRM</button>
+        <button id="btnCancel" class="btn clear" ng-click="$ctrl.discard()">DISCARD</button>
+    </div>
+</div>

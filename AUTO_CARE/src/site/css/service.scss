@@ -1,0 +1,39 @@
+/*.screen{
+    animation: fadeIn 1.0s;
+} */
+.screen.ng-hide{
+    animation: slideOutDown 0.5s;
+}
+.screen.ng-hide-remove{
+    animation: slideInUp 0.5s;
+}
+.image-tile{
+    .image-tile-browse{
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        background-color: #007C92;
+        border-radius: 5px;
+        color: #cfe3d8;
+        font-size: 3em;
+        opacity: 0.5;
+        
+        transform: translateY(50%);
+        
+        span{
+            transform: translateY(-50%);
+            top: 50%;
+        }
+    }
+    
+    .image-tile-browse:hover{
+        opacity: 1;
+    }
+
+    height: 50vh;
+    width: 50%;
+    text-align: center;
+    float: left;
+    position: relative;
+}
+

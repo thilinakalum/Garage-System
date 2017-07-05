@@ -1,0 +1,50 @@
+@import "mixins/variables.scss";
+
+.nav-tabs > li > a{
+}
+
+
+
+.nav-tabs{
+    /*border: none;*/
+    border-color: #E4E4E4;
+
+    li{
+        a{
+            border: none;
+            border-bottom: 5px solid none;
+
+            padding: 10px 0 5px 0;
+            margin: 0px 10px 0px 10px;
+            text-transform: uppercase;
+            color: $dark-font-color;
+
+            background-color: transparent !important;
+        }
+
+        a:hover{
+            background-color: transparent !important;
+        }
+    }
+
+    li.active{
+        a, a:hover, a:focus{
+            border: none;
+            border-bottom: 5px solid $primary-color;
+            font-weight: 500;
+        }
+    }
+}
+
+/*animation*/
+
+/* set reference point */
+.tab-content {
+    position: relative;
+}
+
+/* set animate effect */
+ .tab-content > .tab-pane{
+    /*transition: 0.2s linear opacity;*/
+    animation: 1s fadeIn;
+}

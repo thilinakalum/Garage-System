@@ -1,0 +1,63 @@
+$default-color:         #9DA5BE;
+$primary-color:         #5093E1;
+$info-color:            #31b0d5;
+$success-color:         #50C14E;
+$warning-color:         #F5A623;
+$danger-color:          #F65177;
+
+$default-color-border:    darken($default-color,10%);
+$primary-color-border:    darken($primary-color,10%);
+$info-color-border:       darken($info-color,10%);
+$success-color-border:    darken($success-color,10%);
+$warning-color-border:    darken($warning-color,10%);
+$danger-color-border:     darken($danger-color,10%);
+
+$default-color-dark:    darken($default-color,10%);
+$primary-color-dark:    darken($primary-color,10%);
+$info-color-dark:       darken($info-color,10%);
+$success-color-dark:    darken($success-color,10%);
+$warning-color-dark:    darken($warning-color,10%);
+$danger-color-dark:     darken($danger-color,10%);
+
+$default-color-dark-border:    darken($default-color-dark,10%);
+$primary-color-dark-border:    darken($primary-color-dark,10%);
+$info-color-dark-border:       darken($info-color-dark,10%);
+$success-color-dark-border:    darken($success-color-dark,10%);
+$warning-color-dark-border:    darken($warning-color-dark,10%);
+$danger-color-dark-border:     darken($danger-color-dark,10%);
+
+$default-color-extra-dark:    darken($default-color-dark,10%);
+$primary-color-extra-dark:    darken($primary-color-dark,10%);
+$info-color-extra-dark:       darken($info-color-dark,10%);
+$success-color-extra-dark:    darken($success-color-dark,10%);
+$warning-color-extra-dark:    darken($warning-color-dark,10%);
+$danger-color-extra-dark:     darken($danger-color-dark,10%);
+
+$default-color-extra-dark-border:    darken($default-color-extra-dark,10%);
+$primary-color-extra-dark-border:    darken($primary-color-extra-dark,10%);
+$info-color-extra-dark-border:       darken($info-color-extra-dark,10%);
+$success-color-extra-dark-border:    darken($success-color-extra-dark,10%);
+$warning-color-extra-dark-border:    darken($warning-color-extra-dark,10%);
+$danger-color-extra-dark-border:     darken($danger-color-extra-dark,10%);
+
+$bg-ultra-dark-color:   #2F323A;
+$bg-hi-dark-color:      #F0F0F0;
+$bg-dark-color:         #FAFAFA;//#EDEFF5;
+$bg-light-color:        #FFFFFF;
+
+$bg-ultra-dark-color-border:   darken(#2F323A,10%);
+$bg-hi-dark-color-border:         #DCDCDC;//darken(#EDEFF5,10%);
+$bg-dark-color-border:         #EDEDED;//darken(#EDEFF5,10%);
+$bg-light-color-border:        darken(#FFFFFF,10%);
+
+/*$control-border-color:  #E6E8E8;
+$control-border-fous:   #5093E1;*/
+$control-border-color:  lighten($primary-color, 20%);
+$control-border-disabled:  #DCDCDC;//lighten($default-color, 20%);
+$control-border-fous:   lighten($danger-color, 20%);
+
+$scrollbar-thumb-color:       #E2E2E2;//#D1D7E9;
+$scrollbar-thumb-color-dark:  lighten($bg-ultra-dark-color, 20%);
+
+$dark-font-color: #808080;
+$light-font-color: #FFFFFF;

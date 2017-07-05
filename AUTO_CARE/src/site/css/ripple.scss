@@ -1,0 +1,22 @@
+@import "mixins/variables.scss";
+
+.ripple-effect{
+    position: absolute;
+    border-radius: 100%;
+    background-color: #FFFFFF;
+    opacity: 0.5;
+
+    animation: ripple-animation 1.2s;
+}
+
+
+@keyframes ripple-animation {
+    from {
+        transform: scale(0.01);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(10.00);
+        opacity: 0;
+    }
+}

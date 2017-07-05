@@ -1,0 +1,21 @@
+/* 
+    Created on : Sep 23, 2016, 11:44:11 AM
+    Author     : Mohan
+*/
+
+/*-------------------------start ripple effect--------------------*/
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+
+/*-------------------------end ripple effect--------------------*/

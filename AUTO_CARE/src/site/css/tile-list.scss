@@ -1,0 +1,52 @@
+@import "mixins/variables.scss";
+
+.tile-list{
+    float: left;
+    color: $default-color;
+
+    .tile-list-title{
+        height: 36px;
+        border-bottom: $bg-dark-color-border solid 2px;
+        text-align: center;
+        color: #FFF;
+        
+        background-color: $primary-color;
+        height: 40px;
+        
+        h4{
+            transform: translate( 0,50%);
+            margin: 0px;
+        }
+    }
+
+    .tile{
+        border-bottom: $bg-dark-color-border solid 1px;
+        border-right: $bg-dark-color-border solid 1px;
+
+        cursor: pointer;
+        align-items: center;
+
+
+        span{
+            display:inline-block;
+            transform: translate( calc(50% + 5px),50%);
+
+            img{
+                display: block;
+                opacity: 0.5;
+            }
+
+            label{
+                display: block;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+
+
+.tile-128{
+    width: 128px;
+    height: 128px;
+}

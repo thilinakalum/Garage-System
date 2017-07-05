@@ -1,0 +1,36 @@
+@import "mixins/variables.scss";
+
+label{
+    font-weight: 500;
+}
+
+.label{
+    vertical-align: middle;
+    padding: 0.2em 0.6em 0.2em;
+    margin:  0 5px 0 0px;
+}
+
+.label-default{
+    background-color: $default-color;
+    border: $default-color-border;
+}
+
+.label-primary{
+    background-color: $primary-color;
+    border: $primary-color-border;
+}
+
+.label-success{
+    background-color: $success-color;
+    border: $success-color-border;
+}
+
+.label-warning{
+    background-color: $warning-color;
+    border: $warning-color-border;
+}
+
+.label-danger{
+    background-color: $danger-color;
+    border: $danger-color;
+}

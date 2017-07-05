@@ -1,0 +1,110 @@
+@import "mixins/variables.scss";
+
+.btn{
+    color: $light-font-color;
+
+    /*for ripple effect*/
+    position: relative !important;
+    overflow: hidden !important;
+    -webkit-filter: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+.btn:hover, .btn:visited, .btn:active, .btn:focus{
+    color: $light-font-color !important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.btn-default{
+    background-color: $default-color;
+    border-color: $default-color;
+}
+
+.btn-primary{
+    background-color: $primary-color;
+    border-color: $primary-color-border;
+}
+
+.btn-info{
+    background-color: $info-color;
+    border-color: $info-color-border;
+}
+
+.btn-success{
+    background-color: $success-color;
+    border-color: $success-color-border;
+}
+
+.btn-warning{
+    background-color: $warning-color;
+    border-color: $warning-color-border;
+}
+
+.btn-danger{
+    background-color: $danger-color;
+    border-color: $danger-color-border;
+}
+
+.btn-default:hover{
+    background-color: $default-color-dark;
+    border-color: $default-color-dark-border;
+}
+
+.btn-primary:hover{
+    background-color: $primary-color-dark;
+    border-color: $primary-color-dark-border;
+}
+
+.btn-info:hover{
+    background-color: $info-color-dark;
+    border-color: $info-color-dark-border;
+}
+
+.btn-success:hover{
+    background-color: $success-color-dark;
+    border-color: $success-color-dark-border;
+}
+
+.btn-warning:hover{
+    background-color: $warning-color-dark;
+    border-color: $warning-color-dark-border;
+}
+
+.btn-danger:hover{
+    background-color: $danger-color-dark;
+    border-color: $danger-color-dark-border;
+}
+
+.btn-default:active,btn-default:visited,btn-default:focus{
+    background-color: $default-color-extra-dark !important;
+    border-color: $default-color-extra-dark-border !important;
+}
+
+.btn-primary:active,btn-primary:visited,btn-primary:focus{
+    background-color: $primary-color-extra-dark !important;
+    border-color: $primary-color-extra-dark-border !important;
+}
+.btn-primary:active,btn-primary:visited,btn-primary:focus{
+    background-color: $primary-color-extra-dark !important;
+    border-color: $primary-color-extra-dark-border !important;
+}
+
+.btn-info:active,btn-info:visited,btn-info:focus{
+    background-color: $info-color-extra-dark !important;
+    border-color: $info-color-extra-dark-border !important;
+}
+
+.btn-success:active,btn-success:visited,btn-success:focus{
+    background-color: $success-color-extra-dark !important;
+    border-color: $success-color-extra-dark-border !important;
+}
+
+.btn-warning:active,btn-warning:visited,btn-warning:focus{
+    background-color: $warning-color-extra-dark !important;
+    border-color: $warning-color-extra-dark-border !important;
+}
+
+.btn-danger:active,btn-danger:visited,btn-danger:focus{
+    background-color: $danger-color-extra-dark !important;
+    border-color: $danger-color-extra-dark-border !important;
+}

@@ -1,0 +1,37 @@
+@import "mixins/variables.scss";
+
+.text-default{
+    color: $default-color;
+}
+.text-primary{
+    color: $primary-color;
+}
+.text-success{
+    color: $success-color;
+}
+.text-warning{
+    color: $warning-color;
+}
+.text-danger{
+    color: $danger-color;
+}
+.text-white{
+    color:$light-font-color;
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.text-right{
+    text-align: right !important;
+}
+
+.text-left{
+    text-align: left !important;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}

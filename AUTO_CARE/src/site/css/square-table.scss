@@ -1,0 +1,62 @@
+@import "mixins/variables.scss";
+
+table.square-table{
+    width:100%;
+
+    thead{
+    
+    }
+
+    tbody{
+    }
+
+    tr{
+        line-height: 48px;
+        border-bottom: $bg-dark-color-border solid 1px;
+    }
+
+    th{
+        padding: 0 15px 0 15px;
+    }
+
+    td{
+        padding: 0 15px 0 15px;
+    }
+
+
+    /*---- form controller----*/
+    th >  .btn, td > .btn{
+        height: 36px;
+        width: 36px;
+        border-radius: 100%;
+        font-size: 80%;
+        padding: 0px;
+        line-height: 34px;
+    }
+
+    tbody tr .btn{
+        border-color: transparent;
+        color: $light-font-color !important;
+    }
+
+    .btn-primary{
+        background: $primary-color !important;
+    }
+    
+    .btn-success{
+        background: $success-color !important;
+    }
+
+    .btn-danger{
+        background: $danger-color !important;
+    }
+    .btn-default{
+        background: $default-color !important;
+    }
+
+    /*---- table selection---*/
+    .selected-row{
+        background-color: $primary-color !important;
+        color:white;
+    }
+}

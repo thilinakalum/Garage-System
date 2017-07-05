@@ -1,0 +1,175 @@
+@import "mixins/variables.scss";
+
+
+.modal-content{
+    border-radius: 0 !important;
+}
+
+.option-pane{
+    width: 100%;
+    display: block;
+    text-align: center;
+    border: 1.5px solid;
+
+    .option-pane-body{
+        padding: 20px;
+
+        .option-pane-icon{
+            color: #FFF;
+            padding: 20px;
+            font-size: 36px;
+            border-radius: 100%;
+        }
+
+        .option-pane-title{
+            margin-top: 10px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .option-pane-message{
+        }
+    }
+
+    .option-pane-footer{
+        padding: 30px;
+        border-top: 2px solid;
+
+        .btn{
+            padding: 10px 20px 10px 20px;
+            border-radius: 0px;
+        }
+    }
+}
+
+/*default option-pane*/
+.option-pane.option-pane-default{
+    border-color: $default-color-border;
+
+    .option-pane-icon{
+        background-color: $default-color;
+    }
+
+    .option-pane-title{
+        color: $default-color;
+    }
+
+    .option-pane-footer{
+        background-color:  $default-color;
+        border-top-color: $default-color-border;
+
+        .btn{
+            background:$default-color-dark-border;
+        }
+    }
+}
+
+/*primary option-pane*/
+.option-pane.option-pane-primary{
+    border-color: $primary-color-border;
+
+    .option-pane-icon{
+        background-color: $primary-color;
+    }
+
+    .option-pane-title{
+        color: $primary-color;
+    }
+
+    .option-pane-footer{
+        background-color:  $primary-color;
+        border-top-color: $primary-color-border;
+
+        .btn{
+            background:$primary-color-dark-border;
+        }
+    }
+}
+
+/*info option-pane*/
+.option-pane.option-pane-info{
+    border-color: $info-color-border;
+
+    .option-pane-icon{
+        background-color: $info-color;
+    }
+
+    .option-pane-title{
+        color: $info-color;
+    }
+
+    .option-pane-footer{
+        background-color:  $info-color;
+        border-top-color: $info-color-border;
+
+        .btn{
+            background:$info-color-dark-border;
+        }
+    }
+}
+
+/*warning option-pane*/
+.option-pane.option-pane-warning{
+    border-color: $warning-color-border;
+
+    .option-pane-icon{
+        background-color: $warning-color;
+    }
+
+    .option-pane-title{
+        color: $warning-color;
+    }
+
+    .option-pane-footer{
+        background-color:  $warning-color;
+        border-top-color: $warning-color-border;
+
+        .btn{
+            background:$warning-color-dark-border;
+        }
+    }
+}
+
+/*success option-pane*/
+.option-pane.option-pane-success{
+    border-color: $success-color-border;
+
+    .option-pane-icon{
+        background-color: $success-color;
+    }
+
+    .option-pane-title{
+        color: $success-color;
+    }
+
+    .option-pane-footer{
+        background-color:  $success-color;
+        border-top-color: $success-color-border;
+
+        .btn{
+            background:$success-color-dark-border;
+        }
+    }
+}
+
+/*danger option-pane*/
+.option-pane.option-pane-danger{
+    border-color: $danger-color-border;
+
+    .option-pane-icon{
+        background-color: $danger-color;
+    }
+
+    .option-pane-title{
+        color: $danger-color;
+    }
+
+    .option-pane-footer{
+        background-color:  $danger-color;
+        border-top-color: $danger-color-border;
+
+        .btn{
+            background:$danger-color-dark-border;
+        }
+    }
+}

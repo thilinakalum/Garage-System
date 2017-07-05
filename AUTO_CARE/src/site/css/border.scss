@@ -1,0 +1,17 @@
+@import "mixins/variables.scss";
+
+.border-all{
+    border: $default-color-border 1px solid;
+}
+.border-top{
+    border-top: $default-color-border 1px solid;
+}
+.border-right{
+    border-right: $default-color-border 1px solid;
+}
+.border-bottom{
+    border-bottom: $default-color-border 1px solid;
+}
+.border-left{
+    border-left: $default-color-border 1px solid;
+}

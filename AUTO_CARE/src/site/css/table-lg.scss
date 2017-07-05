@@ -1,0 +1,174 @@
+@import "mixins/variables.scss";
+
+table.table-lg-rounded{
+    width: 100%;
+    border-spacing:0 5px;
+    border-collapse: separate;
+    margin-bottom: 0px;
+    table-layout: fixed;
+
+    //smart scroll
+    padding-right: 5px;
+
+    thead{
+        font-weight: 500;
+    }
+
+    tbody{
+
+    }
+
+    tr{
+        line-height: 50px;
+    }
+
+    tr > th:first-child, tr > td:first-child{
+        border-radius: 5px 0 0 5px;
+    }
+
+    tr > th:last-child, tr > td:last-child{
+        border-radius: 0 5px 5px 0;
+    }
+
+    tr > td:first-child:last-child, tr > th:first-child:last-child{
+        border-radius: 5px 5px 5px 5px !important;
+        font-size: 17px;
+    }
+
+    th{
+        padding: 0 10px 0 10px;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+    td{
+        padding: 0 10px 0 10px;
+        font-size: 17px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/*-------------background colors--------------*/
+.background-light tbody tr{
+    background-color: $bg-dark-color;
+}
+
+.background-dark tbody tr{
+    background-color: $bg-light-color;
+}
+
+/*-------------form-controls-----------------*/
+th > label, td > label{
+    margin-bottom: 0px;
+}
+th > .form-control, td > .form-control{
+    margin-bottom: 5px;
+}
+
+.control-table  th > .form-control,.control-table  td > .form-control{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.control-table.with-label  th > .form-control,.control-table.with-label  td > .form-control{
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
+}
+
+.background-dark .control-table .form-control{
+    background-color: $bg-dark-color;
+}
+
+.background-light .control-table .form-control{
+    background-color: $bg-light-color;
+}
+
+th >  .btn, td > .btn{
+    height: 24px;
+    width: 24px;
+    border-radius: 100%;
+    font-size: 75%;
+    padding: 0px;
+    line-height: 24px;
+}
+
+tbody tr .btn{
+    background-color: transparent;
+    border-color: transparent;
+    color: inherit;
+}
+tbody tr .btn-default{
+    color: $default-color !important;
+}
+tbody tr .btn-primary{
+    color: $primary-color !important;
+}
+tbody tr .btn-info{
+    color: $info-color !important;
+}
+tbody tr .btn-success{
+    color: $success-color !important;
+}
+tbody tr .btn-warning{
+    color: $warning-color !important;
+}
+tbody tr .btn-danger{
+    color: $danger-color !important;
+}
+.table-hover{
+    tbody{
+        tr:hover{
+            .btn{
+                color: inherit !important;
+            }
+        }  
+    }
+}
+
+/*animation*/
+tr.ng-enter{
+   // animation: 0.5s bounceIn;
+}
+tr.ng-leave{
+    //animation: 0.5s bounceOut;
+}
+
+.select-danger-row{
+    background-color: lighten($danger-color, 20%) !important;
+    color: $light-font-color;
+}
+
+.select-primary-row{
+    background-color: lighten($primary-color, 20%) !important;
+    color: $dark-font-color;
+}
+.white-row{
+    background-color: $bg-light-color !important;
+    color: $dark-font-color;
+}
+
+.select-primary-row-table-header{
+    background-color: $primary-color !important;
+    color: $light-font-color !important;
+}
+
+.select-success-row{
+    color: $light-font-color;
+    background-color: $success-color !important;
+}
+
+tbody tr input{
+    color: $dark-font-color;
+    background-color: $light-font-color;
+}
+.selected {
+    background-color:#5093E1 !important;
+    color:white;
+}

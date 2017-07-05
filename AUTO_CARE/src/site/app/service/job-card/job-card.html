@@ -1,0 +1,271 @@
+<div class="screen col-xs-12 background-dark" style="position: absolute; height: 100vh;" ng-show="ui.mode === 'VEHICLE'">
+
+    <!--search area-->
+    <div style="padding-top: 15px; position: absolute;">
+        <div class="col-lg-6 col-md-12" style="margin-left: -15px;">
+            <!--search box-->
+            <div class="input-group input-group-lg">
+                <input type="text" style="text-transform: uppercase;" class="form-control" placeholder="Search vehicles..."
+                       ng-model="model.searchKeyword">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+            </div>
+            <!--/search box-->
+
+            <!--suggestion box-->
+            <div class="list-group" style="padding-top: 5px; position: absolute; z-index: 5; width: calc(100% - 30px); margin-bottom: 0px;"
+                 ng-show="model.showSuggestions">
+                <a class="list-group-item" ng-repeat="jobcard in model.searchSuggestions|limitTo:5" ng-click="ui.setExistingJobCard(jobcard);">
+                    <i class="glyphicon glyphicon-cd"></i>&nbsp; 
+                    <b ng-bind="jobcard.vehicleNo">[VEHICLE NUMBER]</b>&nbsp;<small ng-bind="'(' + jobcard.customer.name + ')'"></small>
+                </a>
+                <a class="list-group-item active" ng-click="ui.setNewJobCard();">
+                    <b><i>(ADD NEW VEHICLE)</i></b>
+                </a>
+            </div>
+            <!--/suggestion box-->
+        </div>
+    </div>
+    <!--/seach area-->
+
+    <div class="row smart-scroll-y" style="margin-top: 91px; height: calc(100vh - 91px); " ng-show="ui.viewDiv === 'CLIENT'" >
+        <div class="col-lg-3 col-md-3"></div>
+        <div class="col-xs-12 col-sm-12 col-md-6  col-lg-6 ">
+            <div class="form-group form-group-lg">
+                <span class="btn btn-default btn-lg btn-block">CLIENT INFORMATION</span>
+            </div>
+
+            <div class="form-group form-group-lg">
+                <label>MOBILE</label>
+                <input class="form-control" ng-model="model.jobCard.customer.mobileNo" typeahead-on-select="model.getCustomerByMobileNo($model)" uib-typeahead="clientLists.customerNo as (clientLists.mobileNo + ' - ' + clientLists.name) for clientLists in model.clientList |filter:$viewValue|limitTo:10">
+            </div>
+
+            <div class="form-group form-group-lg">
+                <label>NIC</label>
+                <input class="form-control" ng-model="model.jobCard.customer.nic" typeahead-on-select="model.getCustomerByNic($model)"  uib-typeahead="clientLists.customerNo as clientLists.nic for clientLists in model.clientList |filter:$viewValue|limitTo:10" >
+            </div>
+
+            <div class="form-group form-group-lg">
+                <label>NAME</label>
+                <input class="form-control" ng-model="model.jobCard.customer.name">
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3"></div>
+        <div class="fab-container">
+            <a class="fab fab-lg fab-default" ng-click="ui.newCustomer();"><i class="glyphicon glyphicon-user"></i>&nbsp;</a>
+            <a class="fab fab-lg fab-primary" ng-click="ui.nextButton();"><i class="glyphicon glyphicon-arrow-right"></i>&nbsp;</a>
+        </div>
+    </div>
+
+    <div class="row smart-scroll-y" style="margin-top: 91px; height: calc(100vh - 100px); " ng-show="ui.viewDiv === 'VEHICLE'" >
+        <div class="col-lg-1"></div>
+        <div class="col-md-12 col-lg-10" ng-show="ui.viewDiv === 'VEHICLE'">
+            <div class="form-group form-group-lg">
+                <span class="btn btn-default btn-lg btn-block">VEHICLE INFORMATION</span>
+            </div> 
+            <div class='col-lg-6 col-md-6 '>
+                <div class="form-group form-group-lg">
+                    <label>VEHICLE NO</label>
+                    <input class="form-control" style="text-transform: uppercase;" ng-model="model.jobCard.vehicleNo" ng-keyup="ui.vehicleTextChange($event);">
+                </div>
+
+                <div class="form-group form-group-lg" >
+                    <label>TYPE</label>
+                    <input class="form-control" ng-model="model.jobCard.type" style="text-transform: uppercase;" uib-typeahead="typeList as typeList for typeList in model.vTypeList |filter:$viewValue|limitTo:10" >
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label>MAKE</label>
+                    <input class="form-control" ng-model="model.jobCard.make" style="text-transform: uppercase;"  uib-typeahead="makeList as makeList for makeList in model.vMakeList |filter:$viewValue|limitTo:10" >
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label>MODEL</label>
+                    <input class="form-control" ng-model="model.jobCard.model" style="text-transform: uppercase;"  uib-typeahead="modelList as modelList for modelList in model.vModelList |filter:$viewValue|limitTo:10" >
+                </div>
+
+                <!--            <div class="form-group form-group-lg">
+                                <label>COLOUR</label>
+                                <input class="form-control" ng-model="model.jobCard.color" style="text-transform: uppercase;"  uib-typeahead="makeList.vmake as makeList.vmake for makeList in model.vMakeList |filter:$viewValue|limitTo:10" >
+                            </div>-->
+
+                <div class="form-group form-group-lg">
+                    <label>ENGINE NO</label>
+                    <input class="form-control" ng-model="model.jobCard.engineNo" >
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label>CHASIE NO</label>
+                    <input class="form-control" ng-model="model.jobCard.chasieNo">
+                </div>
+            </div>
+            <div class='col-lg-6 col-md-6 '>
+                <div class="form-group form-group-lg">
+                    <label>MAN. YEAR</label>
+                    <input type="number" class="form-control" ng-model="model.jobCard.madeYear">
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label>IN MILLAGE</label>
+                    <input type="number" class="form-control"  ng-model="model.jobCard.inMillage">
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label>INS COMPANY</label>
+                    <input class="form-control"  ng-model="model.jobCard.insComNo.comName" uib-typeahead="insCompany.comName as insCompany.comName for insCompany in model.insCompanyList |filter:$viewValue|limitTo:10">
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label>CLAM NO</label>
+                    <input class="form-control" ng-model="model.jobCard.claimNo">
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label>DATE OF ACCIDENT</label>
+                    <input type="date" class="form-control" ng-model="model.jobCard.accidentDate">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+
+        <div class="fab-container">
+            <a class="fab fab-lg fab-primary" ng-click="ui.saveJobCard();"><i class="glyphicon glyphicon-ok"></i>&nbsp;</a>
+        </div>
+    </div>
+</div>
+
+<div class="screen col-xs-12 background-dark" style="position: absolute; height: 100vh;" ng-show="ui.mode === 'IMAGE'">
+    <div class="row smart-scroll-y" style="height: 100vh;">
+        <div class="image-tile" style="background-color:#DE4E71;" ng-show="ui.imageShowMode1 === 'NotAvalable'">
+            <label class="image-tile-browse" for="file">
+                <span class="glyphicon glyphicon-camera"></span>
+                <input ng-model="imgSrc" style="display: none" type="file" id="file" onchange="angular.element(this).scope().ui.changeFunction(event)" accept="image/gif, image/jpeg, image/png">
+            </label>
+        </div>
+        <div class="col-md-6" style="background-color: 	#E9967A; height: 50vh; text-align: center;" ng-show="ui.imageShowMode1 === 'Avalable'" >
+            <img src="{{imagemodelX[0]}}" id="tableBanner" style="width: 100%; height: 100%"> 
+        </div>
+
+
+        <div class="image-tile" style="background-color: #FFD236; height: 50vh; text-align: center;" ng-show="ui.imageShowMode2 === 'NotAvalable'">
+            <label class="image-tile-browse" for="file">
+                <span class="glyphicon glyphicon-camera"></span>
+                <input ng-model="imgSrc" style="display: none" type="file" id="file" onchange="angular.element(this).scope().ui.changeFunction(event)" accept="image/gif, image/jpeg, image/png">
+
+            </label>
+        </div>
+        <div class="col-md-6" style="background-color: #FFF8DC; height: 50vh; text-align: center;" ng-show="ui.imageShowMode2 === 'Avalable'" >
+            <img src="{{imagemodelX[1]}}" id="tableBanner" style="width: 100%; height: 100%"> 
+        </div>
+
+
+        <div class="image-tile" style="background-color: #A5C43A;" ng-show="ui.imageShowMode3 === 'NotAvalable'">
+            <label class="image-tile-browse" for="file">
+                <span class="glyphicon glyphicon-camera"></span>
+                <input ng-model="imgSrc" style="display: none" type="file" id="file" onchange="angular.element(this).scope().ui.changeFunction(event)" accept="image/gif, image/jpeg, image/png">
+            </label>
+        </div>
+        <div class="col-md-6" style="background-color: #00d9ff; height: 50vh; text-align: center;" ng-show="ui.imageShowMode3 === 'Avalable'" >
+            <img src="{{imagemodelX[2]}}" id="tableBanner" style="width: 100%; height: 100%"> 
+        </div>
+
+
+        <div class="image-tile" style="background-color: #F28A2E;" ng-show="ui.imageShowMode4 === 'NotAvalable'">
+            <label class="image-tile-browse" for="file">
+                <span class="glyphicon glyphicon-camera"></span>
+                <input ng-model="imgSrc" style="display: none" type="file" id="file" onchange="angular.element(this).scope().ui.changeFunction(event)" accept="image/gif, image/jpeg, image/png">
+            </label>
+        </div>
+        <div class="col-md-6" style="background-color: #00d9ff; height: 50vh; text-align: center;" ng-show="ui.imageShowMode4 === 'Avalable'" >
+            <img src="{{imagemodelX[3]}}" id="tableBanner" style="width: 100%; height: 100%"> 
+        </div>
+    </div>
+
+    <div class="fab-container">
+        <a class="fab fab-lg fab-primary" ng-click="ui.uploadForm();"><i class="glyphicon glyphicon-ok"></i>&nbsp;</a>
+    </div>
+</div>
+<div class="screen col-xs-12 background-dark" style="position: absolute; height: 100vh;" ng-show="ui.mode === 'ITEM'">
+    <div>
+        <div class="form-group col-xs-12 " Style="margin-top: 60px;">
+            <div class="col-lg-4">
+                <input class="form-control input-lg" ng-model="model.categoryDetail.category" placeholder="CATEGORY" uib-typeahead="category.category as category.category for category in model.categoryList |filter:$viewValue|limitTo:10" typeahead-on-select="model.searchCategoryWiseDescription($model)">
+            </div>
+            <div class="col-lg-5">
+                <input ng-model="model.categoryDetail.itemDescription" class="form-control input-lg" placeholder="DESCRIPTION" uib-typeahead="description.itemDes as description.itemDes for description in model.discriptionSelectedList |filter:$viewValue|limitTo:10">
+            </div>
+            <div class="col-lg-3">
+                <button class="btn btn-primary" style="width: 50px; height: 50px"  ng-click="ui.categoryDatail();"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
+        </div>
+        <div class="form-group col-xs-12 " Style="margin-top: 20px;">
+            <div class="col-xs-10"> 
+                <table class="square-table table-hover background-light-dark">
+                    <col style="width: 40%">
+                    <col style="width: 60%">
+
+                    <thead class="background-dark">
+                        <tr>
+                            <th style="font-size: 20px"><label>CATEGORY</label></th>
+                            <th style="font-size: 20px">DESCRIPTION</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="smart-scroll-y col-xs-10" style="height: calc(100vh - 250px);">
+                <table class="square-table table-hover background-light-dark">
+                    <col style="width: 40%">
+                    <col style="width: 55%">
+                    <tbody>
+                        <tr ng-repeat="categoryDetail in model.categoryDetailList">
+                            <td style="font-size: 18px">{{categoryDetail.category}}</td>
+                            <td style="font-size: 18px">{{categoryDetail.itemDescription}}</td>
+                            <td class="text-right" style="padding-left: 5px;">
+                                <button class="btn btn-danger" ng-click="ui.deleteCategoryDetail(categoryDetail.indexNo,$index)"><span class="glyphicon glyphicon-trash"></span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-2 background-light" style="width:200px; height: 130px; margin-top: 200px">
+                <canvas width="500" height="300" id="canvas" drawing></canvas>
+            </div>
+            <div class="fab-container">
+                <a class="fab fab-lg fab-primary" ng-click="ui.finish();"><i class="glyphicon glyphicon-ok"></i>&nbsp;</a>
+            </div>
+        </div>
+    </div>
+<!--    <div class="col-xs-8 col-xs-offset-2" style="margin-top: 36px;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <label>Category</label>
+                        <input type="text" class="form-control" uib-typeahead="category.category as category.category for category in model.categoryList|filter:$viewValue" ng-model="tempCategoryDetails.category">
+                    </div>
+                    <div class="col-xs-5">
+                        <label>Description</label>
+                        <input type="text" class="form-control" uib-typeahead="description.itemDes as description.itemDes for description in model.descriptionList|categoryFilter:$viewValue:tempCategoryDetails.category:categoryDetails" ng-model="tempCategoryDetails.description">
+                    </div>
+                    <div class="col-xs-2">
+                        <label>&nbsp;</label>
+                        <button class="btn btn-primary btn-block" ng-click="ui.addCategoryDetail();">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="panel-body">
+                    <div class="row" ng-repeat="(key, values) in categoryDetails|groupBy:'category'">
+                        <div class="col-xs-12" ng-bind="key"></div>
+                        <div class="col-xs-6 col-xs-offset-6" ng-repeat="value in values" ng-bind="value.description"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+<!--    <div class="fab-container">
+        <a class="fab fab-lg fab-primary" ng-click="ui.finish();"><i class="glyphicon glyphicon-ok"></i>&nbsp;</a>
+    </div>-->
+</div>
+

@@ -1,0 +1,70 @@
+@import "mixins/variables.scss";
+
+.animation-fade.ng-hide-remove{
+    animation: 1s fadeIn;
+
+}
+.animation-fade.ng-hide-add{
+    /*animation: 0.5s fadeOut;*/
+}
+
+/*rotate animation*/
+@keyframes rotate{
+    0%{
+        opacity:0.0;
+        transform: rotate3d(0,1,0,120deg);
+    }
+
+    100%{
+        opacity:1;
+        transform: rotate3d(0,1,0,0deg);
+    }
+}
+
+.animation-v-grow{
+    overflow: hidden;
+    /*    display: block;
+        
+        height: 100px;
+        transition: 0.5s ease-out;*/
+}
+
+.animation-v-grow.ng-hide-add{
+    animation: shrink 0.5s;
+}
+
+.animation-v-grow.ng-hide-remove{
+    animation: expand 0.5s;
+}
+
+@keyframes expand{
+    from {
+        max-height:0;
+    }
+    to {
+        max-height:500px;
+    }
+}
+
+@keyframes shrink{
+    from {
+        max-height:500px;
+    }
+    to {
+        max-height:0;
+    }
+}
+
+/*.animation-v-grow.ng-hide-remove{*/
+/*animation: 0.5s v-grow;*/
+/*transition: height .5s;*/
+/*}*/
+
+/*@keyframes v-grow{
+    0%{
+        height:0;
+    }
+    100%{
+        height:100%;
+    }
+}*/

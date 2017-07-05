@@ -1,0 +1,58 @@
+@import "mixins/variables.scss";
+
+.search-input{
+    width: 100%;
+    border-radius: 16px;
+    min-height: 40px;
+    border: $control-border-color 1px solid;
+    margin: 8px 0 8px 0;
+    outline: none;
+    padding: 0px 16px 0 16px;
+    font-size: 15px;
+}
+
+.form-control{
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: $control-border-color 1px solid;
+}
+
+.form-control:focus{
+    border-color: $control-border-fous;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.form-control:disabled{
+    border-color: $control-border-disabled;
+}
+
+.calender-header{
+    display: inline-block;
+    margin-top: 10px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    border-bottom: $control-border-color 1px solid;
+}
+
+.calender-div{
+    display: inline-block;
+    border: #EFF1F9 1px solid;
+    height: 80px;
+}
+.calender-div:hover{
+    background: #DDDDDD;
+}
+.calender-div{
+    display: inline-block;
+    border: $control-border-color 1px solid;
+    height: 65px;
+}
+
+.date{
+    margin-top: 10px;
+    font-size: 15px;
+    color: #666666;
+    text-align: center;
+}

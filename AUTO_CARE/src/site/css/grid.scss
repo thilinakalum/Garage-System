@@ -1,0 +1,47 @@
+@import "mixins/variables.scss";
+
+/*.grid{
+
+    .tile{
+        display: block;
+        background: blue;
+    }
+
+    .w-1{
+        width: 10%;
+    }
+
+    .h-1{
+        height: 10%;
+    }
+
+}*/
+
+.grid{
+    position: relative;
+    /*margin: 5px;*/
+
+    .grid-tile{
+        position: absolute;
+        display: block;
+        /*opacity: 0.4;*/
+        /*padding: 5px;*/
+        border: $bg-dark-color-border 1px solid;
+
+        .grid-tile-title{
+            height: 36px;
+            border-bottom: $bg-dark-color-border solid 2px;
+            text-align: center;
+            /*color: #FFF;*/
+            color: $default-color;
+
+            background-color: $bg-dark-color;
+            height: 40px;
+
+            h4{
+                transform: translate( 0,50%);
+                margin: 0px;
+            }
+        }
+    }
+}

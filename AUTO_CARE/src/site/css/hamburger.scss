@@ -1,0 +1,58 @@
+@import "mixins/variables.scss";
+
+.hamburger{
+    float:right;
+    margin :5px 5px 0 0;
+    
+    
+    div{
+        width: 40px;
+        height: 25px;
+        position: relative;
+        transform: rotate(0deg);
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+
+        span{
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            left: 0;
+            opacity: 1;
+            transition: .6s ease-in-out;         
+            background-color: $light-font-color;
+        }
+
+        span:nth-child(1) {
+            top: 0px;
+        }
+
+        span:nth-child(2) {
+            top: 10px;
+        }
+
+        span:nth-child(3) {
+            top: 20px;
+        }
+    }
+
+    .open span:nth-child(1) {
+        top: 10px;
+        transform: rotate(135deg);
+    }
+
+    .open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+    }
+
+    .open span:nth-child(3) {
+        top: 10px;
+        transform: rotate(-135deg);
+    }
+}
+
+.hamburger:hover{
+    opacity: 0.5;
+}

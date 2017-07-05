@@ -1,0 +1,89 @@
+@import "mixins/variables.scss";
+
+.fab-container{
+    position: absolute;
+    display: block;
+    right: 24px;
+    bottom: 24px;
+    margin: auto;
+
+    opacity: 0.1;
+}
+
+.fab-container:hover{
+    opacity: 1;
+}
+
+.fab{
+    display: block;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    margin: 15px auto auto;
+    box-shadow:  0 0 4px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.28);
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer;
+
+    /*for ripple effect*/
+    position: relative;
+    overflow: hidden;
+    -webkit-filter: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+.fab-default{
+    background-color: $default-color;
+}
+
+.fab-primary{
+    background-color: $primary-color;
+}
+
+.fab-success{
+    background-color: $success-color;
+}
+
+.fab-warning{
+    background-color: $warning-color;
+}
+
+.fab-danger{
+    background-color: $danger-color;
+}
+
+.fab-default:hover{
+    background-color: $default-color-dark;
+}
+
+.fab-primary:hover{
+    background-color: $primary-color-dark;
+}
+
+.fab-success:hover{
+    background-color: $success-color-dark;
+}
+
+.fab-warning:hover{
+    background-color: $warning-color-dark;
+}
+
+.fab-danger:hover{
+    background-color: $danger-color-dark;
+}
+
+.fab-lg{
+    width: 96px;
+    height: 96px;
+    
+    font-size: x-large;
+}
+
+.fab i{
+    color: #FFFFFF;
+
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%, -50%);
+}
+
